@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #000000;
+    --hover-color: #787878;
+    --bg-light: #f7fafc;
+    --text-dark: #2d3748;
+    --border-color: #978e8e;
+    --dark-border-color: #4b5563;
+    --hover-shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --dark-card-bg: #1f2937;
+    --padding-x: 24px;
+    --padding-y: 16px;
+    --font-family: "Josefin Sans", sans-serif;
+    --font-weight-bold: 700;
+    --font-size-lg: 1.125rem;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    background-color: var(--bg-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1152px;
+    padding: var(--padding-y) var(--padding-x);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon {
+    height: 32px;
+    width: 32px;
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+}
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px var(--hover-shadow-color);
+    padding: var(--padding-y) 0;
+    z-index: 10;
+}
+
+.nav.open {
+    display: block;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .nav {
+        display: flex;
+        position: static;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--hover-color);
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 10px;
+}
+
+.page-title {
+    font-size: 1.875rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+}
+
+
+.footer {
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form input {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form label {
+    font-weight: 600;
+}
+
+.styledButton {
+    align-self: center;
+    margin-top: 10px;
+    width: 120px;
+    height: 50px;
+
+}
