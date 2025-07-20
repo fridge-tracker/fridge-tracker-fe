@@ -3,6 +3,7 @@ import {Form, useActionData, useNavigate} from "react-router-dom";
 import apiClient, {ENDPOINTS} from "../api/apiClient.js";
 import {toast} from "react-toastify";
 import {useEffect} from "react";
+import Utility from "../utility/Utility.js";
 
 
 export default function Register (){
@@ -96,8 +97,10 @@ export default function Register (){
 }
 
 
+
+
 // eslint-disable-next-line react-refresh/only-export-components
-export async function registerAction({ request }) {
+export const registerAction = async ({ request }) =>{
     const data = await request.formData();
     const registerData = {
         firstName: data.get("firstName"),
@@ -109,6 +112,6 @@ export async function registerAction({ request }) {
             return { success: true };
 
     }).catch((error) => {
-        return { success: false, error: error.response?.data?.detail || 'Registration failed'};
+        return { success: false, error: Utility.mapErrorResponseToMessage(error) || 'Registration failed'};
     });
 }

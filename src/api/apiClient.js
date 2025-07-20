@@ -1,10 +1,17 @@
 import axios from "axios";
-import keycloak from "../components/keycloak/keycloak";
+import keycloak from "../keycloak/keycloak";
 
 const WHITE_LIST = ["v1/users/register"];
 export const ENDPOINTS = {
     LOGIN: "/v1/users/login",
     USER: {REGISTER: "/v1/users/register"},
+    GOODS: {
+        GET_OVERVIEW: (page, size)=>`/v1/goods?page=${page}&size=${size}`,
+        ADD: "/v1/goods",
+        REMOVE: (id)=>`/v1/goods/${id}`,
+        UPDATE: (id)=>`/v1/goods/${id}`,
+    }
+
 };
 
 const apiClient = axios.create({

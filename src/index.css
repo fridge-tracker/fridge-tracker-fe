@@ -8,17 +8,15 @@
     --border-color: #978e8e;
     --dark-border-color: #4b5563;
     --hover-shadow-color: rgba(0, 0, 0, 0.1);
-    --card-bg: #ffffff;
-    --dark-card-bg: #1f2937;
+    --good-bg: #ffffff;
     --padding-x: 24px;
     --padding-y: 16px;
     --font-family: "Josefin Sans", sans-serif;
-    --font-weight-bold: 700;
     --font-size-lg: 1.125rem;
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family), serif;
     background-color: var(--bg-light);
     color: var(--text-dark);
     margin: 0;
@@ -177,3 +175,67 @@ body {
     height: 50px;
 
 }
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.listings-container {
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+
+.element-container {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--good-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px;
+}
+
+.element-container button {
+    margin: 5px;
+}
+.near-expiry {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #e3bc0f;
+    color: var(--bg-light);
+    font-weight: bold;
+}
+
+.expired {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #dd0f1f;
+    color: var(--bg-light);
+    font-weight: bold;
+}
+
+.fresh {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #17ae3a;
+    color: var(--bg-light);
+    font-weight: bold;
+}
+
+.goods-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

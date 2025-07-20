@@ -1,6 +1,6 @@
-import PageHeading from "../PageHeading.jsx";
+import PageHeading from "./PageHeading.jsx";
 import {useNavigate} from 'react-router-dom';
-import fridge from '../../assets/fridge.svg'
+import fridge from '../assets/fridge.svg'
 
 const Home = ()=>{
     const navigate = useNavigate();

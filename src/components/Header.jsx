@@ -1,4 +1,4 @@
-import fridge from '../../assets/fridgesmall.svg'
+import fridge from '../assets/fridgesmall.svg'
 import {Link} from "react-router-dom";
 import { useKeycloak } from '@react-keycloak/web';
 
@@ -41,14 +41,12 @@ const Header = ()=>{
                         </li>
                         <li>
                             {keycloak.authenticated &&
-                                <li>
-                                    <Link
-                                        className="nav-link"
-                                        to="/goods"
-                                    >
-                                        {keycloak.tokenParsed?.given_name + " " + keycloak.tokenParsed?.family_name}
-                                    </Link>
-                                </li>
+                                <Link
+                                    className="nav-link"
+                                    to="/goods"
+                                >
+                                    {keycloak.tokenParsed?.given_name + " " + keycloak.tokenParsed?.family_name}
+                                </Link>
                                 }
                         </li>
                     </ul>

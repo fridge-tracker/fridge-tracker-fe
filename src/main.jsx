@@ -3,13 +3,15 @@ import './index.css'
 import App from './App.jsx'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
 import Register, { registerAction }  from "./components/Register.jsx";
-import Home from "./components/home/Home.jsx";
-import Goods from "./components/Goods.jsx"
+import Home from "./components/Home.jsx";
+import Goods from "./components/good/Goods.jsx"
 import {Bounce, ToastContainer} from "react-toastify";
 
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import {ReactKeycloakProvider} from '@react-keycloak/web'
-import keycloak from "./components/keycloak/keycloak.js"
+import keycloak from "./keycloak/keycloak.js"
+import EditGood, {updateAction} from "./components/good/EditGood.jsx";
+import AddGood, {addAction} from "./components/good/AddGood.jsx";
 
 
 const routeDefinitions = createRoutesFromElements(
@@ -22,6 +24,16 @@ const routeDefinitions = createRoutesFromElements(
                 <Goods/>
             </PrivateRoute>
         }/>
+        <Route path="/addGood" element={
+            <PrivateRoute>
+                <AddGood/>
+            </PrivateRoute>
+        } action={addAction}/>
+        <Route path="/editGood" element={
+            <PrivateRoute>
+                <EditGood/>
+            </PrivateRoute>
+        } action={updateAction}/>
     </Route>
 );
 
@@ -44,6 +56,7 @@ createRoot(document.getElementById('root')).render(
             pauseOnHover={true}
             theme={"dark"}
             transition={Bounce}
+            enableHtml={true}
         />
     </ReactKeycloakProvider>
 )
