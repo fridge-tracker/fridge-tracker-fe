@@ -54,6 +54,7 @@ const Goods = () => {
             <Listings
                 items={content}
                 childProps="data"
+                emptyMessage="No goods stored in the fridge."
                 rerender={setRerender}
             >
                 <Good ></Good>
