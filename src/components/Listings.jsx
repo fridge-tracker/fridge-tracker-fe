@@ -1,7 +1,7 @@
 import React, {Children} from "react";
 
 const Listings = (props) => {
- const { items, children, childProps, rerender } = props;
+ const { items, children, childProps, rerender, emptyMessage } = props;
  const child = Children.only(children);
 
 
@@ -17,7 +17,7 @@ const Listings = (props) => {
                )
             )
         ):(
-         <p>Nothing to display</p>
+         <p>{emptyMessage}</p>
         )
 
         }

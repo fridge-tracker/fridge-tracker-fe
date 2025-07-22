@@ -26,7 +26,7 @@ const Header = ()=>{
                                         to="#"
                                         onClick={(e) => {
                                             e.preventDefault(); // Prevent default navigation
-                                            keycloak.logout();
+                                            keycloak.logout({ redirectUri: import.meta.env.VITE_FE_BASE_URL });
                                         }}
                                         role="button"
                                     >
